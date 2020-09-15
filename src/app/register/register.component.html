@@ -1,0 +1,73 @@
+<div class="container" style="padding-top:40px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+  <h2>Registration form</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="OnSubmit()" >
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" id="name"  placeholder="Enter Name">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <input type="text" class="form-control" formControlName="gender" id="gender"  placeholder="Gender">
+    </div>
+    <div class="form-group">
+      <label for="email">Email </label>
+      <input type="text" class="form-control" formControlName="email" id="email"  placeholder="Enter email">
+    </div>
+    <div class="form-group">
+      <label for="contact">Contact</label>
+      <input type="text" class="form-control" formControlName="contact" id="contact"  placeholder="Contact">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" formControlName="password" id="password"  placeholder="Password">
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" formControlName="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+    </div>
+    <div class="form-group">
+      <label for="roleiId">Role Name</label>
+      <input type="text" class="form-control" formControlName="roleName" id="roleName" placeholder="role">
+    </div>
+    <button type="submit" class="btn btn-primary" ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Register</button>
+    <a routerLink="/create-login/" class="btn btn-link "> Login</a>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">LoginId</th>
+    <th scope="col">Name</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Email Id</th>
+    <th scope="col">Contact</th>
+    <th scope="col">Password</th>
+    <th scope="col">Confirm Password</th>
+    <th scope="col">Role Name</th>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let d of registerList">
+    <td>{{d.loginId}}</td>
+    <td>{{d.name}}</td>
+    <td>{{d.gender}}</td>
+    <td>{{d.email}}</td>
+    <td>{{d.contact}}</td>
+    <td>{{d.password}}</td>
+    <td>{{d.confirmPassword}}</td>
+    <td>{{d.roleName}}</td>
+
+  </tr>
+</tbody>
+
+</table>

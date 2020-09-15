@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <style>
+
+        input[type=text], select {
+            width: 100%;
+            padding: 8px 16px;
+            margin: 8px 0;
+            display: inline-flex;
+            border: 1px solid #gf12f8;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+     
+        input[type=password], select {
+            width: 100%;
+            padding: 8px 16px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #gf12f8;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+
+        input[type=submit], select {
+            width: 100%;
+            background-color: azure;
+            padding: 8px 16px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: aquamarine;
+            }
+
+
+        div {
+            border-radius: 5px;
+            background-color: #0094ff;
+            padding: 5px;
+        }
+
+        h1 {
+            color: #0094ff;
+            margin-left: 20px;
+        }
+
+        body {
+            position:center;
+            margin-left:50%;
+            width: 50%;
+            background-image: url('Images/patient.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        
+       
+        title {
+            color: #gf12f8;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body style="padding-top:20px">
+    <div class="col-md-10 col-md-10 float-md-right">
+        <div class="well">
+            <form action="javascript:void(0);" method="POST" onsubmit="addRegisterDetail()">
+                <center>
+                    <h3>Registration</h3>
+                    <div class="container" align="left">
+
+                        <!-- <p>Please enter the details.</p>-->
+                        <br />
+                        <label for="name"><b>Name:</b></label>
+                        <input type="text" placeholder="Enter Name" id="name" required>
+                        <br /><br />
+                        <label for="gender"><b>Gender:</b></label>
+
+                        <select name="gender" id="gender">
+                            <option value="select">Select</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+
+                        </select><br /><br />
+
+                        <label for="email"><b>Email:</b></label>
+                        <input type="text" placeholder="Email Id" id="email" required>
+                        <br /><br />
+
+                        <label for="contact"><b>ContactNo:</b></label>
+                        <input type="text" placeholder="Phone Number" id="contact" required>
+                        <br /><br />
+
+                        <label for="password"><b>Password:</b></label>
+                        <input type="password" placeholder="Enter Password" id="password" required>
+                        <br /><br />
+
+
+
+                        <label for="confirmpassword"><b>Confirm Password:</b></label>
+                        <input type="password" placeholder="Confirm Password" id="confirmpassword" required>
+                        <br /><br />
+
+                        <label for="role">Role Name:</label>
+
+                        <select name="role" id="role">
+                            <option value="Admin">Admin</option>
+                            <option value="User">User</option>
+
+                        </select>
+
+                    </div>
+                    <input type="submit" name="submit" value="Submit" />
+                    <label>If already Registered Login</label>
+                    <a class="btn col-12 btn-primary float-right" href="index.html">Login</a>
+
+                </center>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="lib/jquery-3.5.0.min.js"></script>
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript">
+        const uri = 'http://localhost:59408/api/Logins';
+        function addRegisterDetail() {
+            const addNameTextbox = document.getElementById('name');
+            const addGenderSelectbox = document.getElementById('gender');
+            const addEmailTextbox = document.getElementById('email');
+            const addContactTextbox = document.getElementById('contact');
+            const addPasswordTextbox = document.getElementById('password');
+            const addConfirmPasswordTextbox = document.getElementById('confirmpassword');
+            const addRoleSelectbox = document.getElementById('role');
+
+            const data =
+            {
+                name: addNameTextbox.value.trim(),
+                gender: addGenderSelectbox.value.trim(),
+                email: addEmailTextbox.value.trim(),
+                contact: addContactTextbox.value.trim(),
+                password: addPasswordTextbox.value.trim(),
+                confirmPassword: addConfirmPasswordTextbox.value.trim(),
+                roleName: addRoleSelectbox.value.trim(),
+            };
+            fetch(uri,
+                {
+                    method: 'POST',
+                    headers:
+                    {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                //.then(response => response.json())
+                .then((data) => {
+                    console.log(data, 'Added Successfully');
+                    alert("Added Successfully");
+
+                })
+
+                .catch(error => console.error('Unable to add data.', error));
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<div class="container" style="padding-top:40px;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mx-4">
+        <div class="card-body p-4">
+  <h2>Add Treatment Record</h2>
+  <form [formGroup]="addForm" (ngSubmit)="OnSubmit()" >
+<div>
+  <label>
+      PatientName:
+      <input type="text" class="form-control" formControlName="patientName" id="patientname" placeholder="Patient Name" />
+  </label>
+  <br />
+  <br />
+  <label>
+      PAge:
+      <input type="number" class="form-control" formControlName="pAge" id="page" placeholder="Patient Age" />
+  </label>
+  <br />
+  <br />
+  <label for="gender">Gender:</label>
+  <select id="gender" class="form-control" formControlName="pGender">
+      <option value="select">Select</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+  </select>
+  <br />
+  <br />
+  <label>
+      Email:
+      <input type="text" class="form-control" formControlName="pEmail" id="pemail" placeholder="Patient Email" />
+  </label>
+  <br />
+  <label>
+      AadharID:
+      <input type="text" class="form-control" formControlName="aadharID" id="aadharid" placeholder="AadharId" />
+  </label>
+  <br />
+  <label>
+      PatientContact:
+      <input type="text" class="form-control" formControlName="pContact" id="patientcontact" placeholder="Phone No" />
+  </label>
+  <br />
+
+  <label for="addresstype">AddressType</label>
+  <select id="addresstype" class="form-control" formControlName="addressType">
+      <option value="PatientAddress">Patient Address</option>
+      <option value="OrganisationAddress">Organisation Address</option>
+      <option value="HospitalAddress">Hospital Address</option>
+  </select>
+  <br />
+  <label>
+      Street No
+      <input type="text" class="form-control" formControlName="streetNo" id="street" placeholder="Street No" />
+  </label>
+  <br />
+  <label>
+      Area
+      <input type="text" class="form-control" formControlName="area" id="area" placeholder="Area" />
+  </label>
+  <br />
+  <label>
+      City
+      <input type="text" class="form-control" formControlName="city" id="city" placeholder="City" />
+  </label>
+  <br />
+  <label>
+      State
+      <input type="text" class="form-control" formControlName="state" id="state" placeholder="State" />
+  </label>
+  <br />
+  <label>
+      Country
+      <input type="text" class="form-control" formControlName="country" id="country" placeholder="Country" />
+  </label>
+  <br />
+  <label>
+      ZipCode
+      <input type="text" class="form-control" formControlName="zipCode" id="zipcode" placeholder="ZipCode" />
+  </label>
+  <br />
+  <label>
+      Occupation Name
+      <input type="text" class="form-control" formControlName="occupationName" id="occupationname" placeholder="Occupation" />
+  </label>
+  <br />
+  <label>
+      Occupation Type
+      <input type="text" class="form-control" formControlName="occupationType" id="occupationtype" placeholder="Occupation Type" />
+  </label>
+  <br />
+  <label>
+      Organisation Name
+      <input type="text" class="form-control" formControlName="organisationName" id="organisationname" placeholder="Organisation Name" />
+  </label>
+  <br />
+  <label>
+      Organisation Contact
+      <input type="text" class="form-control" formControlName="organisationContact" id="organisationcontact" placeholder="Organisation Contact" />
+  </label>
+  <br />
+  <label for="addresstype">AddressType</label>
+  <select id="addresstype1" class="form-control" formControlName="org_AddressType">
+      <option value="OrganisationAddress">Organisation Address</option>
+      <option value="PatientAddress">Patient Address</option>
+      <option value="HospitalAddress">Hospital Address</option>
+  </select>
+  <br />
+  <label>
+      Street No
+      <input type="text" class="form-control" formControlName="org_StreetNo" id="street1" placeholder="Street No" />
+  </label>
+  <br />
+  <label>
+      Area
+      <input type="text" class="form-control" formControlName="org_Area" id="area1" placeholder="Area" />
+  </label>
+  <br />
+  <label>
+      City
+      <input type="text" class="form-control" formControlName="org_City" id="city1" placeholder="City" />
+  </label>
+  <br />
+  <label>
+      State
+      <input type="text" class="form-control" formControlName="org_State" id="state1" placeholder="State" />
+  </label>
+  <br />
+  <label>
+      Country
+      <input type="text" class="form-control" formControlName="org_Country" id="country1" placeholder="Country" />
+  </label>
+  <br />
+  <label>
+      ZipCode
+      <input type="text" class="form-control" formControlName="org_ZipCode" id="zipcode1" placeholder="ZipCode" />
+  </label>
+  <br />
+  <label>
+      Hospital Name
+      <input type="text" class="form-control" formControlName="hospitalName" id="hospitalname" placeholder="Hospital Name" />
+  </label>
+  <br />
+  <label>
+      Hospital Contact
+      <input type="text" class="form-control" formControlName="contact" id="contact" placeholder="Phone No" />
+  </label>
+  <br />
+  <label for="addresstype">AddressType</label>
+  <select id="addresstype2" class="form-control" formControlName="hos_AddressType">
+      <option value="HospitalAddress">Hospital Address</option>
+      <option value="PatientAddress">Patient Address</option>
+      <option value="OrganisationAddress">Organisation Address</option>
+  </select>
+  <br />
+  <label>
+      Street No
+      <input type="text" class="form-control" formControlName="hos_StreetNo" id="street2" placeholder="Street No" />
+  </label>
+  <br />
+  <label>
+      Area
+      <input type="text" class="form-control" formControlName="hos_Area" id="area2" placeholder="Area" />
+  </label>
+  <br />
+  <label>
+      City
+      <input type="text" class="form-control" formControlName="hos_City" id="city2" placeholder="City" />
+  </label>
+  <br />
+  <label>
+      State
+      <input type="text" class="form-control" formControlName="hos_State" id="state2" placeholder="State" />
+  </label>
+  <br />
+  <label>
+      Country
+      <input type="text" class="form-control" formControlName="hos_Country" id="country2" placeholder="Country" />
+  </label>
+  <br />
+  <label>
+      ZipCode
+      <input type="text" class="form-control" formControlName="hos_ZipCode" id="zipcode2" placeholder="ZipCode" />
+  </label>
+  <br />
+  <label>
+      Disease Name
+      <input type="text" class="form-control" formControlName="diseaseName" id="diseasename" placeholder="Disease Name" />
+  </label>
+  <br />
+  <label>
+      Disease Type
+      <input type="text" class="form-control" formControlName="diseaseType" id="diseasetype" placeholder="Disease Type" />
+  </label>
+  <br />
+  <label>
+      Admitted Date
+      <input type="date" class="form-control" formControlName="admittedDate" id="admitdate" placeholder="Admitted Date" />
+  </label>
+  <br />
+  <label>
+      Prescription
+      <input type="text" class="form-control" formControlName="prescription" id="prescription" placeholder="Prescription" />
+  </label>
+  <br />
+  <br />
+  <label>
+      Relieving Date
+      <input type="date" class="form-control" formControlName="relievingDate" id="relievingdate" placeholder="Relieving Date" />
+  </label>
+  <br />
+  <label for="isfatal">IsFatal</label>
+  <select id="isfatal" class="form-control" formControlName="isFatal">
+      <option value="select">Select</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+  </select>
+  <br />
+  <label>
+      Currentstage
+      <input type="text" class="form-control" formControlName="currentstage" id="currentstage" placeholder="Currentstage" />
+  </label>
+  <br />
+  <button type="submit" class="btn btn-primary" ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Submit</button>
+  <br />
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+
+        input[type=text], select {
+            width: 100%;
+            padding: 8px 12px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #gf12f8;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type=number], select {
+            width: 100%;
+            padding: 8px 12px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #gf12f8;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type=datetime], select {
+            width: 100%;
+            padding: 8px 12px;
+            margin: 4px 0;
+            display: inline-block;
+            border: 1px solid #gf12f8;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit], select {
+            width: 100%;
+            background-color: azure;
+            padding: 8px 12px;
+            margin: 4px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type=submit]:hover {
+                background-color: aquamarine;
+            }
+
+        div {
+            border-radius: 4px;
+            background-color: #808080;
+            padding: 20px;
+        }
+
+        h1 {
+            color: black;
+            margin-left: 30px;
+        }
+
+        body {
+            background-color: #4800ff;
+            width: 50%;
+            background-image: url('Images/dr.jpg');
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        
+    </style>
+    <title></title>
+</head>
+<body>
+    <a style="background-color:mintcream; margin-left:20px; font:bold;" href='DataTreatment.html'>Back</a><br />
+
+    <h1 style="text-align:center;"><u> Add Treatment Record</u></h1>
+    <form action="javascript:void(0);" method="POST" onsubmit="TreatmentDetails()">
+        <div>
+            <label>
+                PatientName:
+                <input type="text" id="patientname" placeholder="Patient Name" />
+            </label>
+            <br />
+            <label>
+                PAge:
+                <input type="number" id="page" placeholder="Patient Age" />
+            </label>
+            <br />
+            <label for="gender">Gender:</label>
+            <select id="gender">
+                <option value="select">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br />
+            <label>
+                Email:
+                <input type="text" id="pemail" placeholder="Patient Email" />
+            </label>
+            <br />
+            <label>
+                AadharID:
+                <input type="text" id="aadharid" placeholder="AadharId" />
+            </label>
+            <br />
+            <label>
+                PatientContact:
+                <input type="text" id="patientcontact" placeholder="Phone No" />
+            </label>
+            <br />
+            <label for="addresstype">AddressType</label>
+            <select id="addresstype">
+                <option value="PatientAddress">Patient Address</option>
+                <option value="OrganisationAddress">Organisation Address</option>
+                <option value="HospitalAddress">Hospital Address</option>
+            </select>
+            <br />
+            <label>
+                Street No
+                <input type="text" id="street" placeholder="Street No" />
+            </label>
+            <br />
+            <label>
+                Area
+                <input type="text" id="area" placeholder="Area" />
+            </label>
+            <br />
+            <label>
+                City
+                <input type="text" id="city" placeholder="City" />
+            </label>
+            <br />
+            <label>
+                State
+                <input type="text" id="state" placeholder="State" />
+            </label>
+            <br />
+            <label>
+                Country
+                <input type="text" id="country" placeholder="Country" />
+            </label>
+            <br />
+            <label>
+                ZipCode
+                <input type="text" id="zipcode" placeholder="ZipCode" />
+            </label>
+            <br />
+            <label>
+                Occupation Name
+                <input type="text" id="occupationname" placeholder="Occupation" />
+            </label>
+            <br />
+            <label>
+                Occupation Type
+                <input type="text" id="occupationtype" placeholder="Occupation Type" />
+            </label>
+            <br />
+            <label>
+                Organisation Name
+                <input type="text" id="organisationname" placeholder="Organisation Name" />
+            </label>
+            <br />
+            <label>
+                Organisation Contact
+                <input type="text" id="organisationcontact" placeholder="Organisation Contact" />
+            </label>
+            <br />
+            <label for="addresstype">AddressType</label>
+            <select id="addresstype1">
+                <option value="OrganisationAddress">Organisation Address</option>
+                <option value="PatientAddress">Patient Address</option>
+                <option value="HospitalAddress">Hospital Address</option>
+
+            </select>
+            <br />
+            <label>
+                Street No
+                <input type="text" id="street1" placeholder="Street No" />
+            </label>
+            <br />
+            <label>
+                Area
+                <input type="text" id="area1" placeholder="Area" />
+            </label>
+            <br />
+            <label>
+                City
+                <input type="text" id="city1" placeholder="City" />
+            </label>
+            <br />
+            <label>
+                State
+                <input type="text" id="state1" placeholder="State" />
+            </label>
+            <br />
+            <label>
+                Country
+                <input type="text" id="country1" placeholder="Country" />
+            </label>
+            <br />
+            <label>
+                ZipCode
+                <input type="text" id="zipcode1" placeholder="ZipCode" />
+            </label>
+            <br />
+            <label>
+                Hospital Name
+                <input type="text" id="hospitalname" placeholder="Hospital Name" />
+            </label>
+            <br />
+            <label>
+                Hospital Contact
+                <input type="text" id="contact" placeholder="Phone No" />
+            </label>
+            <br />
+            <label for="addresstype">AddressType</label>
+            <select id="addresstype2">
+                <option value="HospitalAddress">Hospital Address</option>
+                <option value="PatientAddress">Patient Address</option>
+                <option value="OrganisationAddress">Organisation Address</option>
+
+            </select>
+            <br />
+            <label>
+                Street No
+                <input type="text" id="street2" placeholder="Street No" />
+            </label>
+            <br />
+            <label>
+                Area
+                <input type="text" id="area2" placeholder="Area" />
+            </label>
+            <br />
+            <label>
+                City
+                <input type="text" id="city2" placeholder="City" />
+            </label>
+            <br />
+            <label>
+                State
+                <input type="text" id="state2" placeholder="State" />
+            </label>
+            <br />
+            <label>
+                Country
+                <input type="text" id="country2" placeholder="Country" />
+            </label>
+            <br />
+            <label>
+                ZipCode
+                <input type="text" id="zipcode2" placeholder="ZipCode" />
+            </label>
+            <br />
+            <label>
+                Disease Name
+                <input type="text" id="diseasename" placeholder="Disease Name" />
+            </label>
+            <br />
+            <label>
+                Disease Type
+                <input type="text" id="diseasetype" placeholder="Disease Type" />
+            </label>
+            <br />
+            <label>
+                Admitted Date
+                <input type="date" id="admitdate" placeholder="Admitted Date" />
+            </label>
+            <br />
+            <label>
+                Prescription
+                <input type="text" id="prescription" placeholder="Prescription" />
+            </label>
+            <br />
+            <label>
+                Relieving Date
+                <input type="date" id="relievingdate" placeholder="Relieving Date" />
+            </label>
+            <br />
+            <label for="isfatal">IsFatal</label>
+            <select id="isfatal">
+                <option value="select">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+            <br />
+            <label>
+                Currentstage
+                <input type="text" id="currentstage" placeholder="Currentstage" />
+            </label>
+            <br />
+            <br />
+
+
+            <input type="submit" value="Submit" />
+            <br />
+        </div>
+    </form>
+    <script src="treatment.js"></script>
+</body>
+</html>

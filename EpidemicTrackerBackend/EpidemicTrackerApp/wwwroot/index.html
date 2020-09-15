@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="CSSpage.css">
+
+    <title>ET Homepage</title>
+</head>
+<body>
+    <!--<img class="picture" src="lib/images/epi.jpeg">-->
+    <nav>
+        <section class="nav-link">
+
+            <aside class="menu">
+                <a href="#" class="navbar_link">
+                    <span class="material-icons">home</span>Home
+                </a>
+                <a href="guideResource.html" class="navbar_link">
+                    <span class="material-icons">receipt</span>Guidelines
+                </a>
+
+                <a href="states.html" class="navbar_link">
+                    <span class="material-icons">call</span>Contact
+                </a>
+
+                <!--<i class="fa fa-unlock-alt"></i>-->
+                <a href="#" class="navbar_link" id="login"><span class="material-icons">login</span>Login|Register</a>
+                <!--<div class="material-icons">change_history
+                </div>-->
+            </aside>
+            <div class="login-form">
+                <form action="javascript:void(0);" method="POST" onsubmit="validateLogin()">
+
+                    <div class="Login">
+
+
+                        <label for="email"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Email" id="email" required>
+                        <br />
+                        <label for="pwd"><b>Password</b></label>
+
+                        <input type="password" placeholder="Password" id="pwd" required />
+                        <br />
+
+
+                        <button type="submit" id="btnLogin" class="btnLogin">Login</button>
+                        <br />
+
+
+                        <div>
+                            Not yet a Member?<a href="register.html">Register</a>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </nav>
+
+    <h1>Epidemic Tracker</h1>
+
+
+    <div class="countdata">
+        <div style="color: black;"> Total Affected :<span class="affectedpatient" id="totalaffect"></span></div>
+        <div style="color: green; margin-left:200px; margin-top:-52px;"> Cured :<span class="curedpatient" id="curedpat"></span></div>
+        <div style="color: orange; margin-left:400px; margin-top:-52px;"> UNCured :<span class="uncuredpatient" id="uncuredpat"></span></div>
+        <div style="color: red; margin-left:600px; margin-top:-50px;"> Deceased :<span class="deceasedpatient" id="deceasedcuredpat"></span></div>
+
+    </div>
+
+
+
+    <script src="Tracker.js"></script>
+
+    <script type="text/javascript"></script>
+
+
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.3.1/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js"></script>
+
+    <script src="index.js" asp-append-version="true"></script>
+    <h1 align="center">States Info</h1>
+    <table id="table1" class="display" style="width:100%">
+        <thead>
+
+
+            <tr>
+
+                <td>State</td>
+                <td>Total Affected</td>
+                <td>Cured</td>
+                <td>UnCured</td>
+                <td>Fatality</td>
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+ 
+
+
+
+</body>
+</html>
+
