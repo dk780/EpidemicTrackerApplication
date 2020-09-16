@@ -1,1 +1,25 @@
-<p>home works!</p>
+<h1>Statewise Information</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">States</th>
+      <th scope="col">Total Affected</th>
+      <th scope="col">Cured</th>
+      <th scope="col">Uncured</th>
+      <th scope="col">Fatality</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of stateList">
+      <td>{{s.state}}</td>
+      <td>{{s.totalAffected}}</td>
+      <td>{{s.cured}}</td>
+      <td>{{s.unCured}}</td>
+      <td>{{s.fatality}}</td>
+
+
+    </tr>
+  </tbody>
+
+  </table>
