@@ -60,18 +60,13 @@ export class AddTreatmentRecordComponent implements OnInit {
       currentstage:[''],
 
     });
-    this.GetTreatmentRecord();
   }
   OnSubmit(){
     this.service.saveTreatmentRecord(this.addForm.value).subscribe(data =>{
       console.log(data);
+      alert('Data Added successfully');
     });
   }
 
-  GetTreatmentRecord(){
-    this.service.GetAllTreatmentRecord().subscribe( data => {
-      this.addList = data;
-    });
-  }
 
 }

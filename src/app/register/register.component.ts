@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ServiceService } from './service.service';
+import { MustMatch } from './must-match.validator';
+
 
 @Component({
   selector: 'app-register',
@@ -18,25 +20,27 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
-      name:[''],
-      gender:[''],
-      email:[''],
-      contact:[''],
-      password:[''],
-      confirmPassword:[''],
-      roleName:[''],
+      name:['',Validators.required],
+      gender:['',Validators.required],
+      email:['',[Validators.required, Validators.email]],
+      contact:['',Validators.required],
+      password:['',[Validators.required, Validators.minLength(4)]],
+      confirmPassword:['',Validators.required],
+      roleName:['',Validators.required],
+    }, {
+      validator: MustMatch('password', 'confirmPassword')
+
     });
-    this.GetLoginData();
   }
+  get f() { return this.registerForm.controls; }
+
+
   OnSubmit(){
     this.service.saveLogin(this.registerForm.value).subscribe(data =>{
       console.log(data);
-    });
-  }
 
-  GetLoginData(){
-    this.service.GetAllLogin().subscribe( data => {
-      this.registerList = data;
+      alert('Successfully Registered)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+
     });
   }
 
