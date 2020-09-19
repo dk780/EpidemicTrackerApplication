@@ -14,14 +14,15 @@ export class LoginComponent {
   loading = false;
   submitted = false;
   model : any={};
+  userdata;
 
   errorMessage:string;
   constructor(private fb: FormBuilder,private router:Router,private LoginService:LoginService) { }
 
   ngOnInit() {
     this.loginForm = this.fb.group({
-        email: ['', Validators.required],
-        password: ['', Validators.required]
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(4)]]
     });
 
 
@@ -35,7 +36,7 @@ export class LoginComponent {
         debugger;
         if(data.Status=="Success")
         {
-          this.router.navigate(['/create-treatmentrecord/']);
+          this.router.navigate(['/treatmentrecord/']);
           debugger;
         }
         else{

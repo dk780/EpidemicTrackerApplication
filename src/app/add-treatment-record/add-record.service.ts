@@ -12,5 +12,8 @@ saveTreatmentRecord(AddData){
   return this.http.post('http://localhost:59408/api/TreatmentRecords',AddData);
 }
 
+GetAllTreatmentRecord(){
+  return this.http.get('http://localhost:59408/api/TreatmentRecords');
+}
 
 }

@@ -5,58 +5,122 @@
         <div class="card-body p-4">
   <h2>Registration form</h2>
   <form [formGroup]="registerForm" (ngSubmit)="OnSubmit()" >
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('name').touched ||
+    registerForm.get('name').dirty) &&
+    registerForm.get('name').errors)}">
       <label for="name">Name</label>
-      <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-          <div *ngIf="f.name.errors.required">Name is required</div>
-      </div>    </div>
-      <div class="form-group">
+      <input type="text" formControlName="name" class="form-control" />
+      <span class="help-block"
+          *ngIf="((registerForm.get('name').touched ||
+          registerForm.get('name').dirty) &&
+          registerForm.get('name').errors)">
+      <span *ngIf="registerForm.get('name').errors.required">
+        Name is required
+      </span>
+      <span *ngIf="registerForm.get('name').errors.minlength ||
+      registerForm.get('name').errors.maxlength">
+          Name must be greater than 2 characters and less than 10 characters
+      </span>
+    </span>
+      </div>
+      <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('gender').touched ||
+      registerForm.get('gender').dirty) &&
+      registerForm.get('gender').errors)}">
           <label>Gender</label>
-          <select formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }">
+          <select formControlName="gender" class="form-control" >
               <option value=""></option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
           </select>
+          <span class="help-block"
+          *ngIf="((registerForm.get('gender').touched ||
+          registerForm.get('gender').dirty) &&
+          registerForm.get('gender').errors)">
+      <span *ngIf="registerForm.get('gender').errors.required">
+        Gender is required
+      </span>
+    </span>
       </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('email').touched ||
+    registerForm.get('email').dirty) &&
+    registerForm.get('email').errors)}">
       <label>Email</label>
-      <input type="text" formControlName="email" class="form-control" ng-model="email" type="email" value="" ng-class="{'has-error': registerForm.email.$error.pattern}" ng-pattern="/^\S+@\S+\.\S+$/i" required/>
-      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required</div>
-          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-      </div>
+      <input type="text" formControlName="email" class="form-control" />
+      <span class="help-block"
+          *ngIf="((registerForm.get('email').touched ||
+          registerForm.get('email').dirty) &&
+          registerForm.get('email').errors)">
+      <span *ngIf="registerForm.get('email').errors.required">
+        Email is required
+      </span>
+      <span *ngIf="registerForm.get('email').errors.email">
+          Enter in email format
+      </span>
+    </span>
+
   </div>
-    <div class="form-group">
+    <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('contact').touched ||
+    registerForm.get('contact').dirty) &&
+    registerForm.get('contact').errors)}">
       <label for="contact">Phone Number</label>
       <input type="text" class="form-control" formControlName="contact" id="contact"  placeholder="Phone Number">
+      <span class="help-block"
+          *ngIf="((registerForm.get('contact').touched ||
+          registerForm.get('contact').dirty) &&
+          registerForm.get('contact').errors)">
+      <span *ngIf="registerForm.get('contact').errors.required">
+        Phone Number is required
+      </span>
+
+    </span>
     </div>
-      <div class="form-group">
+
+      <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('password').touched ||
+      registerForm.get('password').dirty) &&
+      registerForm.get('password').errors)}">
           <label>Password</label>
-          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
-          </div>
+          <input type="password" formControlName="password" class="form-control"  />
+          <span class="help-block"
+          *ngIf="((registerForm.get('password').touched ||
+          registerForm.get('password').dirty) &&
+          registerForm.get('password').errors)">
+      <span *ngIf="registerForm.get('password').errors.required">
+        Password is required
+      </span>
+      <span *ngIf="registerForm.get('password').errors.minlength">
+        Password must be greater than 4 characters
+      </span>
+    </span>
       </div>
-      <div class="form-group">
+
+      <div class="form-group" [ngClass]="{'alert alert-danger': ((registerForm.get('confirmPassword').touched ||
+      registerForm.get('confirmPassword').dirty) &&
+      registerForm.get('confirmPassword').errors)}">
         <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
-        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
-            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
-        </div>
+        <input type="password" formControlName="confirmPassword" class="form-control"  />
+        <span class="help-block"
+          *ngIf="((registerForm.get('confirmPassword').touched ||
+          registerForm.get('confirmPassword').dirty) &&
+          registerForm.get('confirmPassword').errors)">
+      <span *ngIf="registerForm.get('confirmPassword').errors.required">
+        Must match Password
+      </span>
+
+      <span *ngIf="registerForm.get('confirmPassword').errors.pattern">
+          Must match Password
+      </span>
+    </span>
     </div>
       <div class="form-group">
           <label>Role Name</label>
-          <select formControlName="roleName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.roleName.errors }">
+          <select formControlName="roleName" class="form-control" >
               <option value=""></option>
               <option value="Admin">Admin</option>
           </select>
 
       </div>
     <button type="submit" class="btn btn-primary" ><span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>Register</button>
-    <a routerLink="/create-login/" class="btn btn-link "> Login</a>
+    <a routerLink="/login/" class="btn btn-link "> Login</a>
   </form>
 </div>
 </div>

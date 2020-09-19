@@ -60,6 +60,7 @@ export class AddTreatmentRecordComponent implements OnInit {
       currentstage:[''],
 
     });
+    this.GetTreatmentRecordData();
   }
   OnSubmit(){
     this.service.saveTreatmentRecord(this.addForm.value).subscribe(data =>{
@@ -68,5 +69,11 @@ export class AddTreatmentRecordComponent implements OnInit {
     });
   }
 
+  GetTreatmentRecordData(){
+    this.service.GetAllTreatmentRecord().subscribe( data => {
+      this.addList = data;
+    });
 
+
+}
 }
