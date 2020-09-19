@@ -13,9 +13,10 @@ import { HeaderComponent } from './header/header.component';
 import { from } from 'rxjs';
 import { LoginComponent } from './login/login.component';
 import { AddTreatmentRecordComponent } from './add-treatment-record/add-treatment-record.component';
+import { TreatmentRecordComponent } from './treatment-record/treatment-record.component';
 @NgModule({
   declarations: [
-    AppComponent, RegisterComponent, HomeComponent, HeaderComponent, LoginComponent, AddTreatmentRecordComponent
+    AppComponent, RegisterComponent, HomeComponent, HeaderComponent, LoginComponent, AddTreatmentRecordComponent, TreatmentRecordComponent
   ],
   imports: [
     BrowserModule,

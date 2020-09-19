@@ -6,9 +6,9 @@ import { LoginComponent } from './login/login.component';
 import { AddTreatmentRecordComponent } from './add-treatment-record/add-treatment-record.component';
 
 
-const routes: Routes = [{path: 'create-register', component:RegisterComponent},
-{path:'create-home', component:HomeComponent},{path:'create-login', component:LoginComponent},
-{path:'create-treatmentrecord',component:AddTreatmentRecordComponent}];
+const routes: Routes = [{path: '',   redirectTo: 'home', pathMatch: 'full' },{path: 'registration', component:RegisterComponent},
+{path:'home', component:HomeComponent},{path:'login', component:LoginComponent},
+{path:'treatmentrecord',component:AddTreatmentRecordComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

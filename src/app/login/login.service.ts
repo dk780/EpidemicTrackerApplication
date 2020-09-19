@@ -12,7 +12,7 @@ export class LoginService {
   token : string;
   header : any;
   constructor(private http : HttpClient) {
-    this.Url = 'http://localhost:59408/api/Logins/SignIn';
+    this.Url = 'http://localhost:59408/api/Users/SignIn';
     const headerSettings: {[name: string]: string | string[]; } = {};
     this.header = new HttpHeaders(headerSettings);
   }

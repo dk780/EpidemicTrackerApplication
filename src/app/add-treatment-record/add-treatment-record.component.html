@@ -1,3 +1,104 @@
+<h1>Treatment Records</h1>
+<table class="table">
+
+  <thead>
+      <tr>
+          <th scope="col">PatientName</th>
+          <th scope="col">PAge</th>
+          <th scope="col">PGender</th>
+          <th scope="col">PEmail</th>
+          <th scope="col">AadharID</th>
+          <th scope="col">PContact</th>
+          <th scope="col">AddressType</th>
+          <th scope="col">StreetNo</th>
+          <th scope="col">Area</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+          <th scope="col">ZipCode</th>
+          <th scope="col">OccupationName</th>
+          <th scope="col">OccupationType</th>
+          <th scope="col">OrganisationName</th>
+          <th scope="col">OrganisationContact</th>
+          <th scope="col">AddressId</th>
+          <th scope="col">AddressType</th>
+          <th scope="col">StreetNo</th>
+          <th scope="col">Area</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+          <th scope="col">ZipCode</th>
+          <th scope="col">HospitalName</th>
+          <th scope="col">Contact</th>
+          <th scope="col">AddressType</th>
+          <th scope="col">StreetNo</th>
+          <th scope="col">Area</th>
+          <th scope="col">City</th>
+          <th scope="col">State</th>
+          <th scope="col">Country</th>
+          <th scope="col">ZipCode</th>
+          <th scope="col">DiseaseName</th>
+          <th scope="col">DiseaseType</th>
+          <th scope="col">AdmittedDate</th>
+          <th scope="col">Prescription</th>
+          <th scope="col">RelievingDate</th>
+          <th scope="col">IsFatal</th>
+          <th scope="col">Currentstage</th>
+
+
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of addList">
+      <td>{{d.patientName}}</td>
+      <td>{{d.pAge}}</td>
+      <td>{{d.pGender}}</td>
+      <td>{{d.pEmail}}</td>
+      <td>{{d.aadharID}}</td>
+      <td>{{d.pContact}}</td>
+      <td>{{d.addressType}}</td>
+      <td>{{d.streetNo}}</td>
+      <td>{{d.area}}</td>
+      <td>{{d.city}}</td>
+      <td>{{d.state}}</td>
+      <td>{{d.country}}</td>
+      <td>{{d.zipCode}}</td>
+      <td>{{d.occupationName}}</td>
+      <td>{{d.occupationType}}</td>
+      <td>{{d.organisationName}}</td>
+      <td>{{d.organisationContact}}</td>
+      <td>{{d.org_AddressType}}</td>
+      <td>{{d.org_StreetNo}}</td>
+      <td>{{d.org_Area}}</td>
+      <td>{{d.org_City}}</td>
+      <td>{{d.org_State}}</td>
+      <td>{{d.org_Country}}</td>
+      <td>{{d.org_ZipCode}}</td>
+      <td>{{d.hospitalName}}</td>
+      <td>{{d.contact}}</td>
+      <td>{{d.hos_AddressType}}</td>
+      <td>{{d.hos_StreetNo}}</td>
+      <td>{{d.hos_Area}}</td>
+      <td>{{d.hos_City}}</td>
+      <td>{{d.hos_State}}</td>
+      <td>{{d.hos_Country}}</td>
+      <td>{{d.hos_ZipCode}}</td>
+      <td>{{d.diseaseName}}</td>
+      <td>{{d.diseaseType}</td>
+      <td>{{d.admittedDate}</td>
+      <td>{{d.prescription}}</td>
+      <td>{{d.relievingDate}}</td>
+      <td>{{d.isFatal}}</td>
+      <td>{{d.currentstage}}</td>
+
+
+    </tr>
+
+  </tbody>
+</table>
+<hr>
+<hr>
+
 <div class="container" style="padding-top:40px;">
   <div class="row">
     <div class="col-md-6 mx-auto">
@@ -194,3 +295,7 @@
 </div>
 </div>
 </div>
+
+
+
+
